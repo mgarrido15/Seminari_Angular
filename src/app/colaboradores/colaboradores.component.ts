@@ -6,10 +6,12 @@ import { ConfirmDialogComponent } from '../confirmDialog/confirm-dialog.componen
 import { MatDialog } from '@angular/material/dialog';
 import { NombrePipe } from '../pipes/nombre.pipe';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-colaboradores',
-  imports: [CommonModule, NombrePipe, FormsModule],
+  imports: [CommonModule, NombrePipe, FormsModule, RegisterComponent],
   templateUrl: './colaboradores.component.html',
   styleUrl: './colaboradores.component.css',
   standalone: true
@@ -20,7 +22,7 @@ export class ColaboradoresComponent {
   //Para recibir el usuario que proviene del componente usuario
   @Input() usuario: User = new User();
 
-  constructor() {
+  constructor(private router: Router) {
     this.users = [];
   }
 
@@ -71,5 +73,9 @@ export class ColaboradoresComponent {
         this.users.splice(i, 1);
     }
     });
+  }
+
+  Register() {
+    this.router.navigate(['/register']);
   }
 }

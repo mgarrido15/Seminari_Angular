@@ -1,0 +1,20 @@
+<div class="register-container">
+  <h2>Registro de Usuario</h2>
+  <form (ngSubmit)="registerUser(name.value, +age.value, email.value)">
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" #name placeholder="Nombre" required>
+    </div>
+    <div class="form-group">
+      <label for="age">Edad</label>
+      <input type="number" id="age" #age placeholder="Edad" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" #email placeholder="Email" required>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn">Registrar</button>
+    </div>
+  </form>
+</div>

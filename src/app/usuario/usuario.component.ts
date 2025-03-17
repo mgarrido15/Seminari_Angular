@@ -16,7 +16,6 @@ export class UsuarioComponent {
   mostrardata: boolean;
   
   usuario: User = {
-    id: 1,
     name: "Toni",
     age: 40,
     email: "toni.oller@gmail.com",
